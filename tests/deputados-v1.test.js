@@ -1,8 +1,8 @@
 const axios = require('axios');
 
-describe('/camara/v1/deputados', () => {
+describe('/congresso/v1/deputados', () => {
   test('Requisitando todos os deputados', async () => {
-    const requestUrl = `${global.SERVER_URL}/api/camara/v1/deputados`;
+    const requestUrl = `${global.SERVER_URL}/api/congresso/v1/deputados`;
     const response = await axios.get(requestUrl);
 
     expect(response.data).toMatchObject({
@@ -22,7 +22,7 @@ describe('/camara/v1/deputados', () => {
   });
 
   test('Requisitando deputados de um estado válido', async () => {
-    const requestUrl = `${global.SERVER_URL}/api/camara/v1/deputados/uf/SP`;
+    const requestUrl = `${global.SERVER_URL}/api/congresso/v1/deputados/uf/SP`;
     const response = await axios.get(requestUrl);
 
     expect(response.data).toMatchObject({
@@ -42,7 +42,7 @@ describe('/camara/v1/deputados', () => {
   });
 
   test('Requisitando deputados de um estado inválido', async () => {
-    const requestUrl = `${global.SERVER_URL}/api/camara/v1/deputados/uf/123`;
+    const requestUrl = `${global.SERVER_URL}/api/congresso/v1/deputados/uf/123`;
     try {
       await axios.get(requestUrl);
     } catch (error) {
@@ -57,7 +57,7 @@ describe('/camara/v1/deputados', () => {
   });
 
   test('Requisitando deputados de um partido válido', async () => {
-    const requestUrl = `${global.SERVER_URL}/api/camara/v1/deputados/partido/PP`;
+    const requestUrl = `${global.SERVER_URL}/api/congresso/v1/deputados/partido/PP`;
     const response = await axios.get(requestUrl);
 
     expect(response.data).toMatchObject({
@@ -77,7 +77,7 @@ describe('/camara/v1/deputados', () => {
   });
 
   test('Requisitando deputados de um partido inválido', async () => {
-    const requestUrl = `${global.SERVER_URL}/api/camara/v1/deputados/partido/123`;
+    const requestUrl = `${global.SERVER_URL}/api/congresso/v1/deputados/partido/123`;
     try {
       await axios.get(requestUrl);
     } catch (error) {
@@ -92,7 +92,7 @@ describe('/camara/v1/deputados', () => {
   });
 
   test('Requisitando deputados com um ID válido', async () => {
-    const requestUrl = `${global.SERVER_URL}/api/camara/v1/deputados/160508`;
+    const requestUrl = `${global.SERVER_URL}/api/congresso/v1/deputados/160508`;
     const response = await axios.get(requestUrl);
 
     expect(response.data).toMatchObject({
@@ -112,7 +112,7 @@ describe('/camara/v1/deputados', () => {
   });
 
   test('Requisitando deputados com um ID inválido', async () => {
-    const requestUrl = `${global.SERVER_URL}/api/camara/v1/deputados/111111111`;
+    const requestUrl = `${global.SERVER_URL}/api/congresso/v1/deputados/111111111`;
     try {
       await axios.get(requestUrl);
     } catch (error) {
