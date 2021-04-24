@@ -1,5 +1,5 @@
 import app from '@/app';
-import getDeputados from '@/services/camara/deputados';
+import { getDeputados } from '@/services/camara/deputados';
 
 const action = async (request, response) => {
   try {
